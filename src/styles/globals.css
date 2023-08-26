@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.rocket {
+  width: 250px;
+  position: absolute;
+  right: 200%;
+  bottom: -200%;
+  animation: rocket 4s linear infinite;
+  rotate: 56deg;
+}
+
+@keyframes rocket {
+  0% {
+    bottom: -200%;
+    right: 200%;
+    opacity: 0;
+  }
+  100% {
+    bottom: 305%;
+    right: -300%;
+    opacity: 0.3;
+  }
+}
